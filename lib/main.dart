@@ -2,19 +2,17 @@
 import 'package:e_commerce/models/wishlist_cart.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:url_strategy/url_strategy.dart';
 
 import 'app.dart';
 import 'models/item.dart';
 import 'models/shopping_cart.dart';
 
 void main() {
+  setPathUrlStrategy();
   runApp(
       MultiProvider(
         providers: [
-          // Provider<LoginViewModel>(
-          //   create: (_) => LoginViewModel(UserService()),
-          // ),
-
           Provider(create: (context) => ProductItemModel()),
           ChangeNotifierProxyProvider<ProductItemModel, ShoppingCart>(
             create: (context) => ShoppingCart(),
@@ -27,7 +25,7 @@ void main() {
           ChangeNotifierProxyProvider<ProductItemModel, WishListCart>(
             create: (context) => WishListCart(),
             update: (context, item, cart) {
-              if (cart == null) throw ArgumentError.notNull('cart');
+              if (cart == null) throw ArgumentError.notNull('Wishlist');
               cart.catalog = item;
               return cart;
             },
