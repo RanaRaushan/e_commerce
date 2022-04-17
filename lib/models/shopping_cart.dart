@@ -61,7 +61,6 @@ class ShoppingCart extends ChangeNotifier {
   }
 
   void remove(Item item) {
-    debugPrint("$item $items");
     if (items.isEmpty) return;
 
     final indexOfItem = items.indexWhere((i) {

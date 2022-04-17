@@ -2,8 +2,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import '../models/item.dart';
-import '../models/shopping_cart.dart';
+import 'package:e_commerce/models/item.dart';
+import 'package:e_commerce/models/shopping_cart.dart';
 
 class CartListPage extends StatefulWidget {
   final ShoppingCart cart;
@@ -26,33 +26,33 @@ class _CartListPageState extends State<CartListPage> {
   Widget build(BuildContext context) {
     List<Widget> items = [];
 
-    widget.cart.items.forEach((c) {
+    for (var c in widget.cart.items) {
       items.add(_CartListItemWidget(
         item: c,
-        // carts: widget.cart,
+
       ));
       items.add(const Padding(
         padding: EdgeInsets.only(top: 8.0),
       ));
-    });
+    }
 
     return Scaffold(
         appBar: AppBar(
-          title: Text('My Cart'),
+          title: const Text('My Cart'),
           actions: <Widget>[
             TextButton(
               style: TextButton.styleFrom(primary: Colors.white),
               onPressed: () => this._checkout(),
-              child: Text("Checkout"),
+              child: const Text("Checkout"),
             )
           ],
         ),
         body: Container(
-            decoration: BoxDecoration(color: Color(0xfff0eff4)),
+            decoration: const BoxDecoration(color: Color(0xfff0eff4)),
             child: Stack(
               children: <Widget>[
                 ListView(
-                  padding: EdgeInsets.only(bottom: 64),
+                  padding: const EdgeInsets.only(bottom: 64),
                   children: items,
                 ),
                 Positioned(
@@ -82,20 +82,20 @@ class _CartFooterWidget extends StatelessWidget {
             color: Color(0XFFF4F4F4),
             border: Border(top: BorderSide(color: Colors.grey, width: 0.5))),
         child: Padding(
-          padding: EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16.0),
           child: Center(
               child: Row(
             children: <Widget>[
               const Text(
                 'Total',
                 textAlign: TextAlign.left,
-                // style: Theme.of(context).textTheme.title,
+
               ),
               Expanded(
                   child: Text(
                 totalPrice,
                 textAlign: TextAlign.right,
-                // style: Theme.of(context).textTheme.subhead,
+
               ))
             ],
           )),
@@ -105,7 +105,7 @@ class _CartFooterWidget extends StatelessWidget {
 
 class _CartListItemWidget extends StatelessWidget {
   final Item item;
-  // final ShoppingCart carts;
+
 
   const _CartListItemWidget({required this.item});
 
@@ -134,8 +134,8 @@ class _CartListItemWidget extends StatelessWidget {
           Expanded(
               child: Text(
             item.name,
-            // style:
-            //     Theme.of(context).textTheme.title.apply(fontSizeFactor: 0.75),
+
+
           )),
           const Padding(
             padding: EdgeInsets.only(right: 8.0),
@@ -147,7 +147,7 @@ class _CartListItemWidget extends StatelessWidget {
                   Text(
                     "qty: ${item.quantity} | ",
                     textAlign: TextAlign.right,
-                    // style: Theme.of(context).textTheme.subhead,
+
                   ),
                   const Padding(
                     padding: EdgeInsets.only(right: 8.0),
@@ -155,27 +155,14 @@ class _CartListItemWidget extends StatelessWidget {
                   Text(
                     "Price: ${item.formattedPrice(item.price*item.quantity)}",
                     textAlign: TextAlign.right,
-                    // style: Theme.of(context).textTheme.subhead,
+
                   ),
                 ],
                 ),
-                TextButton(onPressed: ()=> carts.remove(item), child: Text("Remove")),
+                TextButton(onPressed: ()=> carts.remove(item), child: const Text("Remove")),
               ]
               )
           ),
-          // Text(
-          //   "qty: ${item.quantity} | ",
-          //   textAlign: TextAlign.right,
-          //   // style: Theme.of(context).textTheme.subhead,
-          // ),
-          // const Padding(
-          //   padding: EdgeInsets.only(right: 8.0),
-          // ),
-          // Text(
-          //   "Price: ${item.formattedPrice(item.price*item.quantity)}",
-          //   textAlign: TextAlign.right,
-          //   // style: Theme.of(context).textTheme.subhead,
-          // ),
         ],
       ),
     );

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../models/item.dart';
-import '../models/shopping_cart.dart';
-import '../models/user_model.dart';
-import '../models/wishlist_cart.dart';
-import '../widget/drawer.dart';
+import 'package:e_commerce/models/item.dart';
+import 'package:e_commerce/models/shopping_cart.dart';
+import 'package:e_commerce/models/user_model.dart';
+import 'package:e_commerce/models/wishlist_cart.dart';
+import 'package:e_commerce/widget/drawer.dart';
 import 'cart_list_page.dart';
 
 final GlobalKey<ScaffoldMessengerState> snackBarKey = GlobalKey<ScaffoldMessengerState>();

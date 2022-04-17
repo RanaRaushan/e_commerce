@@ -1,11 +1,7 @@
 import 'package:e_commerce/pages/login_page.dart';
 import 'package:e_commerce/pages/product_listing_page.dart';
 import 'package:e_commerce/pages/signup_page.dart';
-import 'package:e_commerce/pages/wishlist_page.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-
-import 'models/wishlist_cart.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);

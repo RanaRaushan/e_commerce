@@ -7,8 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:intl/intl.dart';
 
-import '../constants/constants.dart';
-import '../models/user_model.dart';
+import 'package:e_commerce/constants/constants.dart';
+import 'package:e_commerce/models/user_model.dart';
 
 class LoginPage extends StatefulWidget {
 

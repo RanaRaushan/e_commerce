@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:intl/intl.dart';
 
-import '../constants/constants.dart';
+import 'package:e_commerce/constants/constants.dart';
 import 'login_page.dart';
 
 class SignupPage extends StatefulWidget {

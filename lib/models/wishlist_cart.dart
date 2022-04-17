@@ -20,7 +20,6 @@ class WishListCart extends ChangeNotifier {
 
 
   bool isExists(item) {
-    debugPrint("$items");
     if (items.isEmpty) {
       return false;
     }
@@ -42,7 +41,6 @@ class WishListCart extends ChangeNotifier {
   }
 
   void remove(Item item) {
-    debugPrint("$item $items");
     if (items.isEmpty) return;
 
     final indexOfItem = items.indexWhere((i) {
