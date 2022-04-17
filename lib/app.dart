@@ -1,6 +1,7 @@
 import 'package:e_commerce/pages/login_page.dart';
 import 'package:e_commerce/pages/product_listing_page.dart';
 import 'package:e_commerce/pages/signup_page.dart';
+import 'package:e_commerce/polls.dart';
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
         LoginPage.routeName: (context) => const LoginPage(),
         SignupPage.routeName: (context) => const SignupPage(),
         ProductListingPage.routeName: (context) => const ProductListingPage(),
+        MyPollsWidget.routeName: (context) => const MyPollsWidget(),
         // FavoritePage.routeName: (context) => FavoritePage(),
       },
     );
